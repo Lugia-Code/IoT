@@ -1,4 +1,4 @@
 opencv-python
 pyzbar
 numpy
-qrcode
+qrcode[pil]
