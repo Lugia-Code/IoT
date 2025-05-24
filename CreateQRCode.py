@@ -18,11 +18,11 @@ def erro_entrada(entrada, qtdAlternativas):
 def validar_placa():
     padrão_placa = r'^[A-Z]{3}[0-9][A-Z0-9][0-9]{2}$'
     while True:
-        placa = input("Digite a placa da moto (formato: ABC1D23): ").upper()
+        placa = input("Digite a placa da moto: ").upper()
         if re.fullmatch(padrão_placa, placa):
             return placa
         else:
-            print("Placa inválida! Certifique-se de que segue o padrão Mercosul (ex: ABC1D23).")
+            print("Placa inválida! Certifique-se de que segue o padrão Mercosul")
 
 def validar_chassi():
     padrão_chassi = r'^[A-HJ-NPR-Z0-9]{17}$'
@@ -43,14 +43,14 @@ placa = validar_placa()
 chassi = validar_chassi()
 
 modelo = input(
-    "Digite o modelo da moto:\n"
-    "1 - Mottu Sport\t2 - Honda Pop 110I\t3 - Mottu Sport ESD\n\n"
+    f"Digite o modelo da moto:\n"
+    "1 - Mottu Sport \t2 - Honda Pop 110I \t3 - Mottu Sport ESD\n\n"
 )
 modelo = erro_entrada(modelo, len(modelos))
 modelo = modelos[modelo - 1]
 
 setor = input(
-    "Digite o setor da moto:\n"
+    f"Digite o setor da moto:\n"
     "1 - Pronta para aluguel\n2 - Pendente\n3 - Sem placa\n4 - Danos estruturais graves\n"
     "5 - Reparo simples\n6 - Agendada para manutenção\n7 - Motor defeituoso\n8 - Minha Mottu\n\n"
 )
